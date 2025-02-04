@@ -1,0 +1,17 @@
+@keyframes subtleSlide {
+    0% {
+      transform: translateX(0%);
+    }
+    50% {
+      transform: translateX(10px); /* Adjust to control how much it slides */
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+  
+  .slide-in {
+    display: inline-block;
+    animation: subtleSlide 2s ease-in-out infinite; /* Repeats the slide */
+  }
+  
