@@ -6,7 +6,7 @@ function Contact() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  const [errors, setErrors] = useState({}); // State for validation errors
+  const [errors, setErrors] = useState({});
   const [success, setSuccess] = useState(false);
 
   const validate = () => {
@@ -45,7 +45,10 @@ function Contact() {
     if (Object.keys(validationErrors).length === 0) {
       const userDetails = { name, email, message };
 
-      axios.post("http://localhost:3001/user/save", userDetails)
+      // Debug: check data before submitting
+      console.log("Sending data:", userDetails);
+
+      axios.post("http://localhost:3005/user/save", userDetails)
         .then(() => {
           setSuccess(true);
           setName("");
@@ -54,7 +57,7 @@ function Contact() {
           setErrors({});
         })
         .catch((error) => {
-          console.log(error);
+          console.log("Error:", error.response ? error.response.data : error.message);
           setSuccess(false);
           alert("There was an error while submitting your message.");
         });

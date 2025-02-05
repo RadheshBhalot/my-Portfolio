@@ -16,6 +16,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use("/user",UserRouter);
 
-
-app.listen(3001);
-console.log("Server invokod at a link http://localhost:3001");
+app.listen(3005, () => {
+    console.log('Server invokod at a link http://localhost:3005');
+});
+    
