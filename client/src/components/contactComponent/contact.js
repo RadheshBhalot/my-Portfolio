@@ -8,18 +8,18 @@ function Contact() {
 
   const [errors, setErrors] = useState({});
   const [success, setSuccess] = useState(false);
+  const [loading, setLoading] = useState(false); // To handle loading state
 
+  // Validation function
   const validate = () => {
     const newErrors = {};
 
-    // Name validation
     if (!name.trim()) {
       newErrors.name = "Name is required";
     } else if (name.length < 3) {
       newErrors.name = "Name must be at least 3 characters";
     }
 
-    // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!email) {
       newErrors.email = "Email is required";
@@ -27,7 +27,6 @@ function Contact() {
       newErrors.email = "Please enter a valid email";
     }
 
-    // Message validation
     if (!message.trim()) {
       newErrors.message = "Message is required";
     } else if (message.length < 10) {
@@ -39,17 +38,19 @@ function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     const validationErrors = validate();
     setErrors(validationErrors);
 
     if (Object.keys(validationErrors).length === 0) {
       const userDetails = { name, email, message };
 
-      // Debug: check data before submitting
-      console.log("Sending data:", userDetails);
+      setLoading(true); // Start loading before sending request
 
-      axios.post("http://localhost:3005/user/save", userDetails)
-        .then(() => {
+      const backendUrl = process.env.REACT_APP_API_URL || "http://localhost:3005"; // Dynamically set backend URL
+
+      axios.post(`${backendUrl}/user/save`, userDetails)
+        .then((response) => {
           setSuccess(true);
           setName("");
           setEmail("");
@@ -60,6 +61,9 @@ function Contact() {
           console.log("Error:", error.response ? error.response.data : error.message);
           setSuccess(false);
           alert("There was an error while submitting your message.");
+        })
+        .finally(() => {
+          setLoading(false); // Stop loading after request completes
         });
     }
   };
@@ -122,10 +126,13 @@ function Contact() {
               {errors.message && <span className="text-red-500 text-sm">{errors.message}</span>}
             </div>
 
+            {/* Submit Button */}
             <button
               type="submit"
-              className='bg-black text-white rounded-xl px-3 py-2 hover:bg-slate-700 duration-300'>
-              Send
+              className='bg-black text-white rounded-xl px-3 py-2 hover:bg-slate-700 duration-300'
+              disabled={loading} // Disable button while loading
+            >
+              {loading ? "Sending..." : "Send"}
             </button>
           </form>
         </div>
