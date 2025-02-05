@@ -116,7 +116,7 @@ function Footer() {
               <a href="https://in.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                 <FaLinkedin size={28} className='text-blue-500 hover:text-blue-700 transition duration-300' />
               </a>
-              <a href="https://www.instagram.com/?next=%2F&hl=en" / target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <a href="https://www.instagram.com/?next=%2F&hl=en/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                 <FaSquareInstagram size={28} className='text-pink-600 hover:text-pink-800 transition duration-300' />
               </a>
               <a href="https://telegram.org" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
