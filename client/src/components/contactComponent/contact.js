@@ -47,10 +47,21 @@ function Contact() {
 
       setLoading(true); // Start loading before sending request
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 09ac0f35a8456033140115eaf381dfb0e1382cda
       const backendUrl = process.env.REACT_APP_API_URL || "http://localhost:3005"; // Dynamically set backend URL
 
       axios.post(`${backendUrl}/user/save`, userDetails)
         .then((response) => {
+<<<<<<< HEAD
+=======
+
+      // Use correct URL (should be your backend URL, not localhost if deployed)
+      axios.post("https://your-api-url.com/user/save", userDetails)
+        .then(() => {
+>>>>>>> 09ac0f35a8456033140115eaf381dfb0e1382cda
           setSuccess(true);
           setName("");
           setEmail("");
