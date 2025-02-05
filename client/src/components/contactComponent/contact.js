@@ -48,7 +48,8 @@ function Contact() {
       // Debug: check data before submitting
       console.log("Sending data:", userDetails);
 
-      axios.post("http://localhost:3005/user/save", userDetails)
+      // Use correct URL (should be your backend URL, not localhost if deployed)
+      axios.post("https://your-api-url.com/user/save", userDetails)
         .then(() => {
           setSuccess(true);
           setName("");
