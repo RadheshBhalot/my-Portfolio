@@ -5,10 +5,10 @@ import Project from '../projectComponent/project';
 import Experience from '../Experience/experience';
 import Service from '../ServiceComponent/service';
 import Contact from '../contactComponent/contact';
-
 import rr from '../../assets/images/rr.jpg';
 
-import { FaSquareFacebook, FaLinkedin, FaInstagram } from "react-icons/fa6";
+import { FaSquareFacebook, FaLinkedin, FaSquareInstagram } from "react-icons/fa6";
+import { IoLogoYoutube } from "react-icons/io";
 import { FaTelegram } from "react-icons/fa";
 import { DiMongodb } from "react-icons/di";
 import { SiExpress } from "react-icons/si";
@@ -41,8 +41,8 @@ function Home() {
                 <ul className="flex justify-center md:justify-start space-x-5 mt-4">
                   <li><a href="https://www.facebook.com/" target="_blank" rel="noreferrer"><FaSquareFacebook className="text-4xl text-blue-600 hover:text-blue-800 transition duration-300" /></a></li>
                  <li><a href="https://in.linkedin.com/" target="_blank" rel="noreferrer"><FaLinkedin className="text-4xl text-blue-500 hover:text-blue-700 transition duration-300" /></a></li>
-                 <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><FaInstagram className='text-4xl text-pink-600 hover:text-pink-800 transition duration-300' /></a></li>
-                  <li><a href="https://web.telegram.org/" target="_blank" rel="noreferrer"><FaTelegram className="text-4xl text-blue-400 hover:text-blue-600 transition duration-300" /></a></li>
+                 <li><a href="https://www.instagram.com/?next=%2F&hl=en" target="_blank" rel="noopener noreferrer"><FaSquareInstagram className='text-4xl text-pink-600 hover:text-pink-800 transition duration-300' /></a></li>
+                  <li><a href="https://web.telegram.org/a/" target="_blank" rel="noreferrer"><FaTelegram className="text-4xl text-blue-400 hover:text-blue-600 transition duration-300" /></a></li>
                 </ul>
               </div>
 
