@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
-mongoose.connect("mongodb+srv://bhalotradhesh:bhalotradhesh@cluster0.3eumw.mongodb.net/contactData?retryWrites=true&w=majority&appName=Cluster0", {
+const dbURI = process.env.MONGODB_URI; // Vercel pe set kiya hua environment variable
+mongoose.connect(dbURI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => {
