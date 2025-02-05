@@ -8,10 +8,9 @@ import Contact from '../contactComponent/contact';
 
 import rr from '../../assets/images/rr.jpg';
 
-import { FaSquareFacebook, FaLinkedin } from "react-icons/fa6";
+import { FaSquareFacebook, FaLinkedin, FaSquareInstagram } from "react-icons/fa6";
 import { IoLogoYoutube } from "react-icons/io";
 import { FaTelegram } from "react-icons/fa";
-
 import { DiMongodb } from "react-icons/di";
 import { SiExpress } from "react-icons/si";
 import { FaReact, FaNodeJs } from "react-icons/fa6";
@@ -42,8 +41,8 @@ function Home() {
                 <h3 className="font-bold text-lg md:text-xl text-gray-700">Connect with Me</h3>
                 <ul className="flex justify-center md:justify-start space-x-5 mt-4">
                   <li><a href="https://www.facebook.com/" target="_blank" rel="noreferrer"><FaSquareFacebook className="text-4xl text-blue-600 hover:text-blue-800 transition duration-300" /></a></li>
-                 <li><a href="https://in.linkedin.com/" target="_blank" rel="noreferrer"><FaLinkedin className="text-4xl text-blue-500 hover:text-blue-700 transition duration-300" /></a></li>
-                 <li><a href="https://www.instagram.com/?next=%2F&hl=en" target="_blank" rel="noopener noreferrer"><FaSquareInstagram  className='text-4xl text-pink-600 hover:text-pink-800 transition duration-300' /></a></li>
+                 <li><a href="https://in.linkedin.com/" target="_blank" rel="noreferrer"><FaLinkedin className="text-4xl text-blue-500 hover:text-blue-700 transition duration-300" /></a></li>
+                 <li><a href="https://www.instagram.com/?next=%2F&hl=en" target="_blank" rel="noopener noreferrer"><FaSquareInstagram className='text-4xl text-pink-600 hover:text-pink-800 transition duration-300' /></a></li>
                   <li><a href="https://web.telegram.org/a/" target="_blank" rel="noreferrer"><FaTelegram className="text-4xl text-blue-400 hover:text-blue-600 transition duration-300" /></a></li>
                 </ul>
               </div>
